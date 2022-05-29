@@ -1,0 +1,40 @@
+{
+    "name": "@mauriora/minimist-better-ajv-errors-cli",
+    "version": "0.0.1",
+    "description": "Combines minimist, typebox, ajv and better-ajv-errors for simple command line args validating.",
+    "license": "MIT",
+    "author": {
+        "name": "Mauri-Ora",
+        "email": "dennis.kuhn@kuhn.geek.co.nz"
+    },
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "files": [
+        "dist"
+    ],
+    "packageManager": "yarn@3.2.1",
+    "engines": {
+        "node": ">=14.0.0"
+    },
+    "scripts": {
+        "lint": "eslint .",
+        "build": "eslint . && tsc --build",
+        "rebuild": "eslint . && tsc --build --clean && tsc --build",
+        "clean": "tsc --build --clean"
+    },
+    "dependencies": {
+        "@sinclair/typebox": "^0.23.5",
+        "ajv": "^8.11.0",
+        "better-ajv-errors": "^1.2.0",
+        "minimist": "^1.2.6"
+    },
+    "devDependencies": {
+        "@mauriora/eslint-config-ts": "^0.0.1",
+        "@mauriora/package-tools": "workspace:^",
+        "@types/minimist": "^1.2.2",
+        "@typescript-eslint/eslint-plugin": "^5.26.0",
+        "ajv-formats": "^2.1.1",
+        "eslint": "7.32.0",
+        "typescript": "4.2.4"
+    }
+}

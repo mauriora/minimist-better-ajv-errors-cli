@@ -1,0 +1,6 @@
+{
+    "root": true,
+    "extends": [
+      "@mauriora/eslint-config-ts"
+    ]
+  }
