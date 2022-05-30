@@ -1,6 +1,6 @@
 {
     "name": "@mauriora/minimist-better-ajv-errors-cli",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "Combines minimist, typebox, ajv and better-ajv-errors for simple command line args validating.",
     "license": "MIT",
     "author": {
@@ -25,6 +25,7 @@
     "dependencies": {
         "@sinclair/typebox": "^0.23.5",
         "ajv": "^8.11.0",
+        "ajv-formats": "^2.1.1",
         "better-ajv-errors": "^1.2.0",
         "minimist": "^1.2.6"
     },
@@ -33,7 +34,6 @@
         "@mauriora/package-tools": "workspace:^",
         "@types/minimist": "^1.2.2",
         "@typescript-eslint/eslint-plugin": "^5.26.0",
-        "ajv-formats": "^2.1.1",
         "eslint": "7.32.0",
         "typescript": "~4.5.5"
     }
