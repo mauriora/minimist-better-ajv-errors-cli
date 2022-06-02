@@ -10,7 +10,11 @@ Add to your project
    yarn add @mauriora/minimist-better-ajv-errors-cli @sinclair/typebox
 ```
 
-Declare your schema, validate and either show errors or perform your task:
+If the `--help` option is used, the schema is shown as help :-)
+
+Declare your schema, validate and either show errors or perform your task.
+
+example.ts:
 
 ```typescript
     import { Static, Type } from '@sinclair/typebox';
@@ -42,7 +46,8 @@ Declare your schema, validate and either show errors or perform your task:
 
     type Args = Static<typeof ArgsSchema>;
 
-    const buildPackge = async ({ bundle, ship }: Args): Promise<boolean> => {
+    const buildPackage = async ({ bundle, ship }: Args): Promise<boolean> => {
+        // YOUR ACTION CODE        
     }
 
     const main = async (): Promise<boolean> => {
@@ -52,7 +57,7 @@ Declare your schema, validate and either show errors or perform your task:
             ajvConsoleLogger(args, ArgsSchema);
             return false;
         }
-        return buildPackge(args);
+        return buildPackage(args);
     };
 
     main()
@@ -63,5 +68,45 @@ Declare your schema, validate and either show errors or perform your task:
                 exit(1);
             }
         });
+
+```
+
+call your script:
+
+```shell
+   > example.ts --ship
+```
+
+```shell
+   > example.ts --help
+{
+    bundle: {
+      default: true,
+      description: 'if set and false then bundle task will be skipped',
+      kind: Symbol(BooleanKind),
+      type: 'boolean',
+      modifier: Symbol(OptionalModifier)
+    },
+    ship: {
+      description: 'if not set then a debug version is build',
+      kind: Symbol(BooleanKind),
+      type: 'boolean',
+      modifier: Symbol(OptionalModifier)
+    },
+    _: {
+      maxItems: 0,
+      kind: Symbol(ArrayKind),
+      type: 'array',
+      items: [Object],
+      modifier: Symbol(OptionalModifier)
+    },
+    color: {
+      description: 'Ignored',
+      kind: Symbol(BooleanKind),
+      type: 'boolean',
+      modifier: Symbol(OptionalModifier)
+    }
+  }
+}
 
 ```
