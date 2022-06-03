@@ -3,6 +3,10 @@
     "version": "0.0.4",
     "description": "Combines minimist, typebox, ajv and better-ajv-errors for simple command line args validating.",
     "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/mauriora/minimist-better-ajv-errors-cli.git"
+    },
     "author": {
         "name": "Mauri-Ora",
         "email": "dennis.kuhn@kuhn.geek.co.nz"
